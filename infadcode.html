@@ -53,8 +53,8 @@
 				var Val = parseInt(document.getElementById("myInput").value);
 				var Val2 = parseInt(document.getElementById("Years").value);
 				var Val3 = parseInt(document.getElementById("Years2").value);
-				var Val4 = parseInt(Years) //- parseInt(Years2) ;
-				document.getElementById('display').value =Val2;
+				var Val4 = Val2 - Val3;//- parseInt(Years2) ;
+				document.getElementById('display').value =Val4;
 				//why not .innnerhtml ans: value ofor those that have value attribute(form) and innerhtm for those html (divs,spans,etc..)
 			}
 
@@ -70,6 +70,7 @@
         var Years = document.getElementById("Years");
 		var Years2 = document.getElementById("Years2");
 		var currentYear = (new Date()).getFullYear();
+	
         for (var i = 1947; i <= currentYear; i++) {
             var option = document.createElement("OPTION");
             option.innerHTML = i;
