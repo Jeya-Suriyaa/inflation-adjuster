@@ -10,14 +10,19 @@
 	
 
 	<div style="padding:2px; background-color:#D99AA5;">
+	<label>Money:</label>
 	<input type="text" placeholder="ABC" id="myInput">
-	<input type="text" placeholder="DEF" id="myInput2">
+	<label>Value of money is in year:</label>
 	<select id="Years"></select>
+	<br>
+    <label>What was the value in the year:</label>
+	<select id="Years2"></select>
 	<BUTTON type="button" onclick="getVal();">Get</button>
 	
 	</div>
 	<!-- see how to get input from 2 different forms -->
 	<div style="padding:2px;background-color: #942f40;">
+	<label>RESULT:</label>
 	<input type="textbox" id="display">
 	<div>
 
@@ -46,9 +51,10 @@
             //alert(Val3);
 			function getVal(){
 				var Val = parseInt(document.getElementById("myInput").value);
-				var Val2 = parseInt(document.getElementById("myInput2").value);
-				var Val3 = parseInt(Val) + parseInt(Val2) ;
-				document.getElementById('display').value =Val3;
+				var Val2 = parseInt(document.getElementById("Years").value);
+				var Val3 = parseInt(document.getElementById("Years2").value);
+				var Val4 = parseInt(Years) //- parseInt(Years2) ;
+				document.getElementById('display').value =Val2;
 				//why not .innnerhtml ans: value ofor those that have value attribute(form) and innerhtm for those html (divs,spans,etc..)
 			}
 
@@ -62,19 +68,35 @@
 
 		window.onload = function () {
         var Years = document.getElementById("Years");
+		var Years2 = document.getElementById("Years2");
 		var currentYear = (new Date()).getFullYear();
         for (var i = 1947; i <= currentYear; i++) {
             var option = document.createElement("OPTION");
             option.innerHTML = i;
             option.value = i;
             Years.appendChild(option);
+			//Years2.appendChild(option);
 			
 			//The appendChild() is a method of the Node interface. The appendChild() method allows you to add a node to the end of the list of child nodes of a specified parent node.
         }
 			//<select id="Years">
 				 //<OPTION value=2015>2015</OPTION>
 			//	</select>
+	    
+			for (var i = 1947; i <= currentYear; i++) {
+            var option = document.createElement("OPTION");
+            option.innerHTML = i;
+            option.value = i;
+            //Years.appendChild(option); Doubt: Why are we able to write this inside a single for loop
+			Years2.appendChild(option);
+			
+			
+	  
     	}
+
+	}
+		
+
     
 
 </script>
