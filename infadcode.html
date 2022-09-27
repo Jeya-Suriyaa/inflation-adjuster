@@ -15,7 +15,7 @@
 	<label>Value of money is in year:</label>
 	<select id="Years"></select>
 	<br>
-    <label>What was the value in the year:</label>
+    <label>What is the value in the year:</label>
 	<select id="Years2"></select>
 	<BUTTON type="button" onclick="getVal();">Get</button>
 	
@@ -24,7 +24,9 @@
 	<div style="padding:2px;background-color: #942f40;">
 	<label>RESULT:</label>
 	<input type="textbox" id="display">
+	<input type="textbox" id="disp">
 	<div>
+
 
  
 <br><br>
@@ -36,16 +38,28 @@
        
             //alert(Val3);
 			function getVal(){
+
+				const ir = [];
+				ir["1947"]=0.03;
+				ir["1948"]=0.06;
+				ir["1949"]=0.05;
+				ir["1950"]=0.04;
+
 				var Val = parseInt(document.getElementById("myInput").value);
 				var Val2 = parseInt(document.getElementById("Years").value);
 				var Val3 = parseInt(document.getElementById("Years2").value);
-				var Val4 = Val2 - Val3;//- parseInt(Years2) ;
+				///var Val4 = Val2 - Val3;//- parseInt(Years2) ;
 				var Val5 = Val;
-				for(let i=0;i<Val4;i++){
-					Val5 = Val5 + (0.06)*Val5;
+				for(let i=Val2+1;i<=Val3;i++){
+					Val5 = Val5 + (ir[i])*Val5;
 				}
 			
 				document.getElementById('display').value =Val5;
+
+				/*const ir = [];
+				ir["1960"]=5.6;
+				var kk=1960;
+				document.getElementById('disp').value =ir[kk];*/
 				//why not .innnerhtml ans: value ofor those that have value attribute(form) and innerhtm for those html (divs,spans,etc..)
 			}
 
@@ -61,6 +75,11 @@
         var Years = document.getElementById("Years");
 		var Years2 = document.getElementById("Years2");
 		var currentYear = (new Date()).getFullYear();
+
+
+
+
+
 	
         for (var i = 1947; i <= currentYear; i++) {
             var option = document.createElement("OPTION");
@@ -74,7 +93,8 @@
 			//<select id="Years">
 				 //<OPTION value=2015>2015</OPTION>
 			//	</select>
-	    
+			
+
 			for (var i = 1947; i <= currentYear; i++) {
             var option = document.createElement("OPTION");
             option.innerHTML = i;
@@ -154,7 +174,7 @@ Year	Inflation Rate (%)	Annual Change
 
 	*/
 	
-	
+	//crate integer array , inside for loop go through yeras i=(year-1960) and add their corresponding values.
 	}
 		
 
