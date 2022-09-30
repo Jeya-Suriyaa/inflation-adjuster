@@ -8,23 +8,22 @@
 
 <body id="bd" style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #F9B9A5;">
 	
-	<div style="float:left;margin:1%5%1%5%;width:80%;height:10%;padding:2.5px;background-color:#942f40;text-align:center">Inflation Adjuster</div>
-	<div style="float:left; margin:5% 5% 1% 5% ;width:80%;padding:2px; background-color:#5b2c34;">
+	<div style="float:left;margin:1%5%1%5%;width:80%;height:10%;padding-top: 2%;background-color:#942f40;text-align:center;color:white;border-style: solid;border-color: black;">Inflation Adjuster</div>
+	<div style="float:left; margin:5% 5% 1% 5% ;width:80%;height:10%;padding-top: 2%; background-color:#5b2c34;text-align: center;color:white;border-style: solid;border-color: black;">
 	<label>Money:</label>
-	<input type="text" placeholder="ABC" id="myInput">
+	<input type="text" placeholder="Amount" id="myInput">
 	<label>Value of money is in year:</label>
 	<select id="Years"></select>
-	<br>
     <label>What is the value in the year:</label>
 	<select id="Years2"></select>
 	<BUTTON type="button" onclick="getVal();">Get</button>
 	</div>
 	<!-- see how to get input from 2 different forms -->
 	
-	<div style="float:left;padding:2px;background-color: #942f40;">
-	<label>RESULT:</label>
-	<input type="textbox" id="display">
-	<input type="textbox" id="disp">
+	<div style="float:left;margin:5% 5% 1% 5% ;width:80%;height:10%;padding-top: 2%;background-color: #942f40;text-align: center;align-items: center;color:white;border-style: solid;border-color: black;">
+	<label >RESULT:</label>
+	<input  type="textbox" id="display">
+	
 	</div>
 
 
@@ -40,11 +39,69 @@
 			function getVal(){
 
 				const ir = [];
-				ir["1947"]=0.03;
-				ir["1948"]=0.06;
-				ir["1949"]=0.05;
-				ir["1950"]=0.04;
-
+				ir[2021]=	0.0513;
+				ir[2020]=	0.0662;
+				ir[2019]=	0.0373;  
+				ir[2018]=	0.0394;
+				ir[2017]=	0.0333;
+				ir[2016]=	0.0495;	
+				ir[2015]=	0.0491;	
+				ir[2014]=	0.0667;
+				ir[2013]=	0.1002;
+				ir[2012]=	0.0948;
+				ir[2011]=	0.0891;
+				ir[2010]=	0.1199;
+				ir[2009]=	0.1088;
+				ir[2008]=	0.0835;
+				ir[2007]=	0.0637;
+				ir[2006]=	0.0580;
+				ir[2005]=	0.0425;
+				ir[2004]=	0.0377;
+				ir[2003]=	0.0381;	
+				ir[2002]=	0.0430;	
+				ir[2001]=	0.0378;	
+				ir[2000]=	0.0401;	
+				ir[1999]=	0.0467;	
+				ir[1998]=	0.1323;	
+				ir[1997]=	0.0716;	
+				ir[1996]=	0.0898;	
+				ir[1995]=	0.1022;	
+				ir[1994]=	0.1025;	
+				ir[1993]=	0.0633;	
+				ir[1992]=	0.1179;	
+				ir[1991]=	0.1387;	
+				ir[1990]=	0.0897;	
+				ir[1989]=	0.0707;	
+				ir[1988]=	0.0938;	
+				ir[1987]=	0.0880;	
+				ir[1987]=	0.0880;	
+				ir[1986]=	0.0873;	
+				ir[1985]=	0.0556;	
+				ir[1984]=	0.0832;	
+				ir[1983]=	0.1187;	
+				ir[1982]=	0.0789;	
+				ir[1981]=	0.1311;	
+				ir[1980]=	0.1135;	
+				ir[1979]=	0.0628;	
+				ir[1978]=	0.0252;	
+				ir[1977]=	0.0831;	
+				ir[1976]=	-0.0763;	
+				ir[1975]=	0.0575;	
+				ir[1974]=	0.2860;	
+				ir[1973]=	0.1694;	
+				ir[1972]=	0.0644;	
+				ir[1971]=	0.0308;	
+				ir[1970]=	0.0509;	
+				ir[1969]=	-0.0058;	
+				ir[1968]=	0.0324;	
+				ir[1967]=	0.1306;	
+				ir[1966]=	0.1080;	
+				ir[1965]=	0.0947;	
+				ir[1964]=	0.1336;	
+				ir[1963]=	0.0295;	
+				ir[1962]=	0.0363;	
+				ir[1961]=	0.0170;	
+				ir[1960]=	0.0178;
 				var Val = parseInt(document.getElementById("myInput").value);
 				var Val2 = parseInt(document.getElementById("Years").value);
 				var Val3 = parseInt(document.getElementById("Years2").value);
@@ -81,7 +138,7 @@
 
 
 	
-        for (var i = 1947; i <= currentYear; i++) {
+        for (var i = 1960; i <= currentYear; i++) {
             var option = document.createElement("OPTION");
             option.innerHTML = i;
             option.value = i;
@@ -95,7 +152,7 @@
 			//	</select>
 			
 
-			for (var i = 1947; i <= currentYear; i++) {
+			for (var i = 1960; i <= currentYear; i++) {
             var option = document.createElement("OPTION");
             option.innerHTML = i;
             option.value = i;
@@ -184,3 +241,4 @@ Year	Inflation Rate (%)	Annual Change
 </body>
 
 </html>
+
